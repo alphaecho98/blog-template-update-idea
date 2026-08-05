@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GIDDI Blog Template — Mockup</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap');
+
+  :root {
+    --giddi-black: #0B0B0C;
+    --giddi-surface: #131416;
+    --giddi-blue: #003C67;
+    --giddi-blue-light: #1F6FA8;
+    --giddi-gold: #C09E66;
+    --giddi-slate: #8B9099;
+    --giddi-offwhite: #E8E8E6;
+    --giddi-white: #FFFFFF;
+    --giddi-hairline: rgba(232,232,230,0.12);
+
+    --font-heading: Optima, 'Optima nova', Candara, 'Segoe UI', Calibri, sans-serif;
+    --font-body: 'Inter Tight', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--giddi-black);
+    color: var(--giddi-offwhite);
+    font-family: var(--font-body);
+  }
+
+  .page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+
+  /* --- Eyebrow / meta row --- */
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--giddi-gold);
+    border: 1px solid rgba(192,158,102,0.4);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+  }
+
+  .readtime {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--giddi-slate);
+    margin-left: 14px;
+  }
+
+  /* --- Hero image --- */
+  .hero-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 0 0 32px;
+    display: block;
+  }
+
+  /* --- Title --- */
+  h1 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 1.15;
+    color: var(--giddi-white);
+    margin: 0 0 28px;
+    letter-spacing: -0.01em;
+  }
+
+  /* --- Byline --- */
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--giddi-hairline);
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--giddi-blue);
+    color: var(--giddi-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .byline-text { font-size: 14px; line-height: 1.5; }
+  .byline-text a { color: var(--giddi-offwhite); text-decoration: none; font-weight: 600; }
+  .byline-text a:hover { color: var(--giddi-gold); }
+  .byline-role { color: var(--giddi-slate); }
+  .byline-date { color: var(--giddi-slate); margin-left: auto; font-size: 13px; white-space: nowrap; }
+
+  /* --- At a Glance card --- */
+  .glance {
+    background: var(--giddi-surface);
+    border: 1px solid var(--giddi-hairline);
+    border-radius: 8px;
+    padding: 28px 28px 24px;
+    margin: 0 0 40px;
+  }
+
+  .glance-label {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--giddi-gold);
+    margin: 0 0 18px;
+  }
+
+  .glance-list {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    row-gap: 14px;
+    column-gap: 12px;
+  }
+
+  .glance-bullet {
+    color: var(--giddi-gold);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .glance-item {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--giddi-offwhite);
+  }
+
+  .glance-item strong { color: var(--giddi-white); font-weight: 600; }
+
+  /* --- Body copy --- */
+  .article p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--giddi-offwhite);
+    margin: 0 0 24px;
+  }
+
+  .article p strong { color: var(--giddi-white); font-weight: 600; }
+  .article a { color: var(--giddi-blue-light); text-decoration: underline; text-underline-offset: 2px; }
+
+  .article h2 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--giddi-white);
+    margin: 56px 0 20px;
+    padding-left: 18px;
+    border-left: 3px solid var(--giddi-gold);
+  }
+
+  .article figure {
+    margin: 40px 0;
+  }
+
+  .article figure img {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+  }
+
+  .article figcaption {
+    font-size: 13px;
+    color: var(--giddi-slate);
+    font-style: italic;
+    margin-top: 10px;
+  }
+
+  /* --- Bottom line callout --- */
+  .callout {
+    background: var(--giddi-blue);
+    border-radius: 8px;
+    padding: 28px 28px;
+    margin: 48px 0;
+  }
+
+  .callout p {
+    color: var(--giddi-offwhite);
+    margin: 0;
+  }
+
+  .callout strong { color: var(--giddi-white); }
+
+  /* --- Author footer card --- */
+  .author-card {
+    display: flex;
+    gap: 18px;
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--giddi-hairline);
+  }
+
+  .author-card .avatar { width: 56px; height: 56px; font-size: 20px; flex-shrink: 0; }
+
+  .author-card-body p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--giddi-slate);
+    margin: 0 0 14px;
+  }
+
+  .author-card-body p strong { color: var(--giddi-white); }
+
+  .view-profile {
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--giddi-gold);
+    border: 1px solid rgba(192,158,102,0.4);
+    border-radius: 999px;
+    padding: 8px 18px;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <span class="tag">Prostate Play</span><span class="readtime">5 min read</span>
+
+  <img class="hero-img" src="https://mygiddi.com/cdn/shop/articles/Article_Images_1ea6bc47-9981-4cb2-83f7-084c69e07779.jpg?v=1782506261&width=1445" alt="prostate stimulation toys">
+
+  <h1>Who Are Prostate Stimulation Toys Actually For?</h1>
+
+  <div class="byline">
+    <div class="avatar">A</div>
+    <div class="byline-text">By <a href="#">Alex</a> <span class="byline-role">· Brand Manager &amp; Writer at GIDDI</span></div>
+    <div class="byline-date">July 13, 2026</div>
+  </div>
+
+  <div class="glance">
+    <p class="glance-label">At a Glance</p>
+    <div class="glance-list">
+      <div class="glance-bullet">—</div>
+      <div class="glance-item"><strong>Who are prostate toys for:</strong> Anyone with a prostate. Prostate stimulation toys are not defined by sexual orientation, but by anatomy.</div>
+
+      <div class="glance-bullet">—</div>
+      <div class="glance-item"><strong>Who's actually using them:</strong> Men across the full spectrum of identity and relationship type. Solo users, couples, first-time explorers, and people who've been doing this for years.</div>
+
+      <div class="glance-bullet">—</div>
+      <div class="glance-item"><strong>Prostate stimulation benefits:</strong> Intense, full-body orgasms that feel different from anything else, plus potential health benefits, including improved prostate circulation and better sexual function.</div>
+
+      <div class="glance-bullet">—</div>
+      <div class="glance-item"><strong>Is prostate stimulation healthy?</strong> Yes. Regular prostate stimulation is associated with several health benefits and carries minimal risk when done correctly with the right tools.</div>
+    </div>
+  </div>
+
+  <div class="article">
+    <p>There's a persistent idea that prostate stimulation toys are a niche product for a specific kind of man. That idea is wrong, and it's kept a lot of people from something genuinely good.</p>
+
+    <p><strong>Prostate stimulation toys are for anyone with a prostate.</strong> Full stop. The rest is just detail worth knowing.</p>
+
+    <h2>The Anatomy Answer</h2>
+
+    <p>The prostate is a walnut-sized gland located just inside the rectum, toward the front wall of the body. It's packed with nerve endings and plays a role in semen production. It also happens to be one of the most sensitive pleasure points in the male body.</p>
+
+    <figure>
+      <img src="https://cdn.shopify.com/s/files/1/2296/3395/files/download_1_1024x1024_b8dd16cf-17e7-4c91-b206-0b8e05c5d770.webp?v=1781205347" alt="prostate anatomy diagram">
+      <figcaption>The prostate sits just inside the rectum, close enough to reach with the right toy.</figcaption>
+    </figure>
+
+    <p>That's not an opinion. It's anatomy. The prostate doesn't know or care about the sexual orientation of the person it belongs to. Stimulating it feels good for the same physiological reason a back massage feels good: nerve endings respond to pressure and motion. Who you're attracted to has nothing to do with it.</p>
+
+    <p>The idea that prostate stimulation toys are "only for gay men" is a cultural assumption, rather than a biological one. It came from decades of silence around male sexual wellness and a false equation between anal play and sexual identity. Neither holds up to any scrutiny.</p>
+
+    <h2>Who's Actually Using Prostate Stimulation Toys</h2>
+
+    <p>The honest answer: a much wider range of people than most assume.</p>
+
+    <p>Straight men use prostate stimulation toys. Married couples incorporate them into partnered sex. Solo users buy them for the same reason anyone buys a pleasure product: because they want to feel good. People with prostate health concerns use them on medical advice. First-time explorers buy them out of curiosity. Experienced users upgrade to better ones.</p>
+
+    <p>Sexual orientation doesn't appear anywhere in that list — because it isn't a factor.</p>
+
+    <div class="callout">
+      <p><strong>What the people using prostate stimulation toys have in common isn't identity.</strong> It's a prostate, and a decision to actually use it.</p>
+    </div>
+
+    <h2>Prostate Stimulation Benefits</h2>
+
+    <p>The pleasure case is strong enough on its own, but prostate stimulation benefits go beyond orgasm.</p>
+
+    <p>Prostate orgasms feel different from conventional orgasms. More diffuse, more full-body, often significantly more intense. Many people describe them as unlike anything they'd experienced before. That difference comes from the density of nerve endings in and around the prostate.</p>
+
+    <p>Beyond the immediate experience, regular prostate stimulation is linked to <a href="#">improved prostate health</a>. It promotes circulation to the gland, helps clear prostatic fluid, and some research suggests it may reduce the risk of prostatitis and support better sexual function over time.</p>
+
+    <figure>
+      <img src="https://cdn.shopify.com/s/files/1/2296/3395/files/1776980297541-tQS-C0JEjc_display.jpg?v=1782504291" alt="GIDDI prostate massager product">
+      <figcaption>GIDDI massagers are shaped to reach the prostate specifically, not adapted from a generic toy.</figcaption>
+    </figure>
+
+    <h2>The Bottom Line on Who This Is For</h2>
+
+    <p><strong>Prostate stimulation toys are for people who want to experience prostate stimulation.</strong> That's the whole criteria.</p>
+
+    <p>If you have a prostate and you're curious about what it can do, you're who these products are for. The assumption that identity determines interest is exactly backwards; interest is personal, anatomy is shared, and the two have nothing to do with each other.</p>
+  </div>
+
+  <div class="author-card">
+    <div class="avatar">A</div>
+    <div class="author-card-body">
+      <p><strong>Alex</strong> is GIDDI's brand manager and resident writer with a background in wellness and pleasure content spanning years and brands. Most writing happens late at night. The topics tend to prefer it.</p>
+      <a class="view-profile" href="#">View Profile</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
